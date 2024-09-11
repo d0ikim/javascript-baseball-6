@@ -66,8 +66,9 @@ class App {
     let again = MissionUtils.Console.readLineAsync(
       "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요."
     );
-    //if(again===1) // 맨위로 보내 재호출하면되나?
-    //else if(again===2) return; //종료이건가?
+    if (again === 1) {
+      this.play();
+    } else if (again === 2) return; //종료이건가?
     //else try catch? 오입력 예외처리?
   }
 }
