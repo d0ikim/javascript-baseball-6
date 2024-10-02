@@ -8,7 +8,7 @@ function waitForInput() {
 }
 
 async function playGame() {
-  console.log("숫자를 입력해주세요...");
+  console.log('숫자를 입력해주세요...');
   let input = await waitForInput();
   console.log(`입력한 숫자는 ${input}입니다.`);
 }
