@@ -7,25 +7,28 @@ class View {
     MissionUtils.Console.print('숫자 야구 게임을 시작합니다.');
   }
 
-  /* 1-1. 숫자 답 뭔지 보기 */
-  print_number(computer) {
-    // comment: computer 대신 다른 변수명 사용해주세요. 어떤 변수명이 더 잘 읽히고 맥락상 맞을까요?
-    MissionUtils.Console.print(`정답 : ${computer}`);
+  /* 1-1. 숫자 답 뭔지 보기 (나중에 지우고 App.js에서도 없애) */
+  print_number(generatedNumbers) {
+    MissionUtils.Console.print(`정답 : ${generatedNumbers}`);
   }
 
-  /* Game.get_score() 에서 반환한 값 출력 */
-  print_score(game) {
-    if (game.strike && game.ball)
+  /* 슽, 볼 점수 매개변수로 score객체 전달받아 출력 */
+  print_score(score) {
+    if (score.strike && score.ball)
       // 슽 볼 둘다 0이 아닐때=둘다걸릴때
-      MissionUtils.Console.print(`${game.strike}스트라이크 ${game.ball}볼`);
-    else if (game.strike !== 0 && !game.ball)
-      // comment: strike, ball 멤버변수에 직접 접근하기보다는, 적절한 method를 호출해서 사용하는게 좋습니다.
+      MissionUtils.Console.print(`${score.strike}스트라이크 ${score.ball}볼`);
+    else if (score.strike !== 0 && !score.ball)
       // 슽만 걸릴때
-      MissionUtils.Console.print(`${game.strike}스트라이크`);
-    else if (game.ball !== 0 && !game.strike)
+      MissionUtils.Console.print(`${score.strike}스트라이크`);
+    else if (score.ball !== 0 && !score.strike)
       // 볼만 걸릴때
-      MissionUtils.Console.print(`${game.ball}볼`);
+      MissionUtils.Console.print(`${score.ball}볼`);
     else MissionUtils.Console.print('낫싱'); //슽도 볼도 다 안걸릴때
+  }
+
+  /* 종료 문구 출력 */
+  print_end() {
+    MissionUtils.Console.print('3개의 숫자를 모두 맞히셨습니다! 게임 종료');
   }
 }
 
