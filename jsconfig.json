@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "target": "ES2020",
+    "jsx": "react",
+    "allowImportingTsExtensions": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "allowJs": true, // 자바스크립트 파일을 허용
+    "checkJs": false // 자바스크립트 파일에 대한 타입 검사를 비활성화
+  },
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*",
+    "**/*.ts" // 타입스크립트 파일을 제외
+  ]
+}
